@@ -1,6 +1,4 @@
-# Pathable Code Challenge
-
-Do you want to join Pathable as a developer? Great. Read this document and then submit your solution. Good luck.
+# League of Sales Code Challenge
 
 ## Machine setup
 
@@ -74,4 +72,4 @@ The page needs to be reactive -- no refresh should be needed to display the late
 
 ## How to deliver your challenge
 
-This challenge should only be submitted via a [GitHub Classroom assignment](https://classroom.github.com/classrooms/60523-pathable/assignments/pathable-code-challenge-1). Then, apply to a developer position [here](https://careers.jobscore.com/careers/pathableinc), being sure to include your GitHub username. 
+This challenge should only be submitted via a [GitHub Classroom assignment](https://classroom.github.com/a/4_3Ub7_l).
