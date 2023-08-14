@@ -1,5 +1,5 @@
 {
-  "name": "vnext-code-challenge",
+  "name": "hanbaione-code-challenge",
   "private": true,
   "scripts": {
     "start": "meteor run --port 3020",
@@ -10,11 +10,10 @@
     "quality": "yarn lint && yarn pretjs && yarn pretjsx"
   },
   "dependencies": {
-    "@babel/runtime": "^7.12.5",
-    "meteor-node-stubs": "^1.0.1",
-    "prettier": "^2.2.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "@babel/runtime": "^7.22.10",
+    "meteor-node-stubs": "^1.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "meteor": {
     "mainModule": {
@@ -23,10 +22,23 @@
     }
   },
   "devDependencies": {
-    "@pathable/eslint-config-pathable": "^2.2.1",
-    "@testing-library/cypress": "^7.0.3",
+    "@babel/core": "^7.22.10",
+    "@babel/eslint-parser": "^7.22.10",
+    "@babel/preset-env": "^7.22.10",
+    "@babel/preset-react": "^7.22.5",
+    "@testing-library/cypress": "^9.0.0",
     "babel-eslint": "^10.1.0",
-    "cypress": "^6.2.1",
-    "eslint": "^7.17.0"
+    "babel-loader": "^9.1.3",
+    "babel-plugin-macros": "^3.1.0",
+    "babel-plugin-styled-components": "^2.1.4",
+    "cypress": "^12.17.3",
+    "eslint": "^8.47.0",
+    "eslint-plugin-cypress": "^2.14.0",
+    "eslint-plugin-meteor": "^7.3.0",
+    "eslint-plugin-react": "^7.33.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.0.1",
+    "prettier-config-standard": "^7.0.0",
+    "standardx": "^7.0.0"
   }
 }

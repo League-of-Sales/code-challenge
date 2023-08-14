@@ -1,0 +1,42 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "shippedProposals": true,
+        "useBuiltIns": "usage",
+        "corejs": "3"
+      }
+    ],
+    [
+      "@babel/preset-react",
+      {
+        "runtime": "automatic"
+      }
+    ]
+  ],
+  "plugins": [
+    "babel-plugin-styled-components",
+    "macros"
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        "istanbul"
+      ]
+    },
+    "production": {
+      "plugins": [
+        [
+          "babel-plugin-jsx-remove-data-test-id",
+          {
+            "attributes": "data-cy"
+          }
+        ]
+      ]
+    }
+  },
+  "ignore": [
+    "**/*_scsslint_*.js"
+  ]
+}

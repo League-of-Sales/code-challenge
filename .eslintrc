@@ -1,17 +1,30 @@
 {
-  "extends": ["@pathable/eslint-config-pathable"],
-  "overrides": [
-    {
-      "files": ["**/*.js", "**/*.jsx"],
-      "rules": {
-        "react/prop-types": "off"
-      }
+  "root": true,
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": {
+      "jsx": true
     },
-    {
-      "files": ["cypress/**/*.js", "cypress/**/*.jsx"],
-      "rules": {
-        "no-param-reassign": 0
-      }
+    "babelOptions": {
+      "configFile": "./eslint-babel.json"
     }
+  },
+  "env": {
+    "meteor": true,
+    "mongo": true,
+    "node": true,
+    "browser": true,
+    "es2021": true
+  },
+  "plugins": [
+    "meteor"
+  ],
+  "extends": [
+    "plugin:meteor/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:cypress/recommended"
   ]
 }
