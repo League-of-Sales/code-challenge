@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-import { format } from 'date-fns'
+import { format, subSeconds } from 'date-fns'
 import { Person } from '../../imports/types/person'
 import EventsContext from './events-context'
 
@@ -28,6 +28,7 @@ const PersonRow: React.FC<PersonRowProps> = ({ person }: PersonRowProps) => {
   const { checkIn, checkOut } = useContext(EventsContext)
 
   const [loading, setLoading] = useState(false)
+  const [, rerender] = useState<number>()
 
   const renderAction = () => {
     if (!person.checkInDate) {
@@ -48,21 +49,31 @@ const PersonRow: React.FC<PersonRowProps> = ({ person }: PersonRowProps) => {
       )
     }
     if (!person.checkOutDate) {
-      return (
-        <button
-          onClick={async () => {
-            logger('check out', person)
-            setLoading(true)
-            await checkOut?.({ personId: person._id })
-            if (!abortController.current.signal.aborted) {
-              setLoading(false)
-            }
-          }}
-          disabled={loading}
-        >
-          Check-out {`${person.firstName} ${person.lastName}`}
-        </button>
-      )
+      if (subSeconds(new Date(), 5) > person.checkInDate) {
+        return (
+          <button
+            onClick={async () => {
+              logger('check out', person)
+              setLoading(true)
+              await checkOut?.({ personId: person._id })
+              if (!abortController.current.signal.aborted) {
+                setLoading(false)
+              }
+            }}
+            disabled={loading}
+          >
+            Check-out {`${person.firstName} ${person.lastName}`}
+          </button>
+        )
+      } else {
+        setTimeout(
+          () => {
+            logger('call rerender')
+            rerender(Math.random)
+          },
+          5000 - new Date().getTime() + person.checkInDate.getTime()
+        )
+      }
     }
     return null
   }
