@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "start": "meteor run --port 3020",
+    "debug": "DEBUG=app:* meteor run --port 3020",
     "cypress": "unset NODE_OPTIONS && cypress open",
     "lint": "eslint .",
     "pretjs": "prettier --write \"**/*.js\"",
@@ -11,9 +12,12 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.22.10",
+    "date-fns": "^2.30.0",
+    "debug": "^4.3.4",
     "meteor-node-stubs": "^1.2.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.0.7"
   },
   "meteor": {
     "mainModule": {
@@ -27,6 +31,9 @@
     "@babel/preset-env": "^7.22.10",
     "@babel/preset-react": "^7.22.5",
     "@testing-library/cypress": "^9.0.0",
+    "@types/debug": "^4.1.8",
+    "@types/meteor": "^2.9.2",
+    "@types/react-dom": "^18.2.7",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^9.1.3",
     "babel-plugin-macros": "^3.1.0",
