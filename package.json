@@ -1,5 +1,9 @@
 {
   "name": "hanbaione-code-challenge",
+  "author": {
+    "name": "Minh Nguyen",
+    "email": "minhna@gmail.com"
+  },
   "private": true,
   "scripts": {
     "start": "meteor run --port 3020",
