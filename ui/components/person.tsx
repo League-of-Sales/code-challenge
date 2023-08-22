@@ -69,7 +69,9 @@ const PersonRow: React.FC<PersonRowProps> = ({ person }: PersonRowProps) => {
         setTimeout(
           () => {
             logger('call rerender')
-            rerender(Math.random)
+            if (!abortController.current.signal.aborted) {
+              rerender(Math.random)
+            }
           },
           5000 - new Date().getTime() + person.checkInDate.getTime()
         )
